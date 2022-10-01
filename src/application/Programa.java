@@ -23,31 +23,25 @@ public class Programa {
 		Date saida = sd.parse(sc.next());
 		
 		if (!saida.after(entrada)) {
-			System.out.println("Erro! Data saida precisa ser superior a data de entrada");
-
+			System.out.println("Erro: Reserva, saida deve ser superior a data de entrada");
 		}else {
-			Reserva  reserva = new Reserva (quarto,entrada,saida);
-			System.out.println("Reserva: "+reserva);
-			
+			Reserva reserva = new Reserva (quarto,entrada,saida);
+			System.out.println(reserva);
 			System.out.println();
-			System.out.println("Atualização de Reserva: ");
-			
-			System.out.println("Data de entrada (dd/MM/yyyy):   ");
+			System.out.println("Entre com a data entrada atualizacao (dd/MM/yyyy): ");
 			entrada = sd.parse(sc.next());
-			
-			System.out.println("Data de saida (dd/MM/yyyy):  ");
+			System.out.println("Entre com a data saida atualizacao (dd/MM/yyyy): ");
 			saida = sd.parse(sc.next());
 			
-			reserva.atualizacao(entrada, saida);
-			System.out.println(reserva);
-			System.out.println(reserva);
-			
+			String erro = reserva.atualizacao(saida,entrada);
+		
+		if (erro != null) {
+			System.out.println("Erro reserva: "+erro);
+		}else {
+			System.out.println("Reserva: "+reserva);
 
-
+			}
 		}
-		
-		
-		
 		
 		
 		sc.close();
