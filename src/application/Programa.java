@@ -40,6 +40,8 @@ public class Programa {
 			
 			reserva.atualizacao(entrada, saida);
 			System.out.println(reserva);
+			System.out.println(reserva);
+			
 
 
 		}
